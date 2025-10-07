@@ -1,4 +1,4 @@
-import MatomoTracker from '@jonkoops/matomo-tracker'
+import MatomoTracker from '@streamr/matomo-tracker'
 import { InstanceParams } from './types'
 
 function createInstance(params: InstanceParams): MatomoTracker {
