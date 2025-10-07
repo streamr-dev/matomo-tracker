@@ -1,16 +1,17 @@
 # Matomo Tracker
 
-> **Warning**
-> This repository is no longer maintained. I no longer use Matomo, nor do I have enough time between projects to take care of these libraries.
+Monorepo for using Matomo tracking in frontend projects. This repository is forked from [jonkoops/matomo-tracker](https://github.com/jonkoops/matomo-tracker).
 
-Monorepo for using Matomo tracking in frontend projects
+## New features in this fork
+
+- Add support for setting 'cookie domain' and 'domains' options to support tracking multiple subdomains of the same domain.
 
 ## Content
 
-This monorepo hosts two Matomo projects for tracking (user) analytics in frontend projects, either with (vanilla) JavaScript or React.
+This monorepo hosts two Matomo projects for tracking (user) analytics in frontend projects, either with (vanilla) JavaScript/TypeScript or React.
 
-- [@jonkoops/matomo-tracker](https://github.com/jonkoops/matomo-tracker/tree/main/packages/js)
-- [@jonkoops/matomo-tracker-react](https://github.com/jonkoops/matomo-tracker/tree/main/packages/react)
+- [@streamr/matomo-tracker](https://github.com/streamr-dev/matomo-tracker/tree/main/packages/js)
+- [@streamr/matomo-tracker-react](https://github.com/streamr-dev/matomo-tracker/tree/main/packages/react)
 
 ## References
 
