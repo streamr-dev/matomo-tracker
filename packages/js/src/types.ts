@@ -18,6 +18,8 @@ export interface UserOptions {
   configurations?: {
     [key: string]: any
   }
+  cookieDomain?: string
+  domains?: string[]
 }
 
 export interface TrackPageViewParams {

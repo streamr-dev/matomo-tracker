@@ -37,6 +37,8 @@ class MatomoTracker {
     heartBeat,
     linkTracking = true,
     configurations = {},
+    cookieDomain,
+    domains,
   }: UserOptions) {
     const normalizedUrlBase =
       urlBase[urlBase.length - 1] !== '/' ? `${urlBase}/` : urlBase
@@ -66,7 +68,18 @@ class MatomoTracker {
       this.pushInstruction('setUserId', userId)
     }
 
+    // Explicit typed options for cookie/domain configuration
+    if (cookieDomain) {
+      this.pushInstruction('setCookieDomain', cookieDomain)
+    }
+    if (domains) {
+      this.pushInstruction('setDomains', domains)
+    }
+
     Object.entries(configurations).forEach(([name, instructions]) => {
+      // If typed options were provided, they take precedence over configurations
+      if (name === 'setCookieDomain' && cookieDomain) return
+      if (name === 'setDomains' && domains) return
       if (instructions instanceof Array) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         this.pushInstruction(name, ...instructions)
