@@ -12,7 +12,7 @@
     "prepublishOnly": "npm run build",
     "postinstall": "lerna link",
     "publish:canary": "lerna publish --canary --yes",
-    "publish:stable": "lerna publish --yes"
+    "publish:stable": "lerna publish patch --yes"
   },
   "workspaces": [
     "packages/*"
