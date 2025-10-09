@@ -39,6 +39,7 @@ class MatomoTracker {
     configurations = {},
     cookieDomain,
     domains,
+    enableCrossDomainLinking,
   }: UserOptions) {
     const normalizedUrlBase =
       urlBase[urlBase.length - 1] !== '/' ? `${urlBase}/` : urlBase
@@ -75,11 +76,20 @@ class MatomoTracker {
     if (domains) {
       this.pushInstruction('setDomains', domains)
     }
+    if (enableCrossDomainLinking) {
+      this.pushInstruction('enableCrossDomainLinking', enableCrossDomainLinking)
+    }
 
     Object.entries(configurations).forEach(([name, instructions]) => {
       // If typed options were provided, they take precedence over configurations
       if (name === 'setCookieDomain' && cookieDomain) return
       if (name === 'setDomains' && domains) return
+      if (
+        name === 'enableCrossDomainLinking' &&
+        typeof enableCrossDomainLinking !== 'undefined'
+      ) {
+        return
+      }
       if (instructions instanceof Array) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         this.pushInstruction(name, ...instructions)

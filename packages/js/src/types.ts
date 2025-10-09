@@ -20,6 +20,7 @@ export interface UserOptions {
   }
   cookieDomain?: string
   domains?: string[]
+  enableCrossDomainLinking?: boolean
 }
 
 export interface TrackPageViewParams {
