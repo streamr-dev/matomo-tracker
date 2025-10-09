@@ -1,6 +1,6 @@
 {
   "name": "@streamr/matomo-tracker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Matomo tracker for frontend projects",
   "main": "lib/index.js",
   "module": "es/index.js",
